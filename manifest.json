@@ -1,0 +1,10 @@
+{
+  "Name": "ChestTotalPrice",
+  "Author": "EliteWise",
+  "Version": "1.0.0",
+  "Description": "Display the total price of all items accumulated in a chest",
+  "UniqueID": "EliteWise.ChestTotalPrice",
+  "EntryDll": "ChestTotalPrice.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}
