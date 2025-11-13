@@ -31,7 +31,7 @@ namespace ChestTotalPrice
             );
         }
 
-        private static void drawTotalValue(SpriteBatch b, int numDigits, int temp, int chestXpos, int chestYpos, int xOffset)
+        private static void drawTotalValue(Chest chest, SpriteBatch b, int numDigits, int temp, int chestXpos, int chestYpos, int xOffset, int policeSize, int moneyIconY)
         {
             for (int i = numDigits - 1; i >= 0; i--)
             {
@@ -40,11 +40,11 @@ namespace ChestTotalPrice
                     new Vector2(385 + (chestXpos + xOffset), chestYpos - 33),
                     new Rectangle(286, 502 - digit * 8, 5, 8),
                     Color.Maroon,
-                    0f, Vector2.Zero, 3f, SpriteEffects.None, 1f);
-                xOffset += 18;
+                    0f, Vector2.Zero, 3f + policeSize, SpriteEffects.None, 1f);
+                xOffset += chest.specialChestType.Get() == Chest.SpecialChestTypes.BigChest ? 14 : 18;
             }
             b.Draw(Game1.mouseCursors_1_6,
-                new Vector2(385 + (chestXpos + xOffset), chestYpos - 31),
+                new Vector2(385 + (chestXpos + xOffset), chestYpos + moneyIconY - 31),
                 new Rectangle(132, 0, 15, 16),
                 Color.White);
         }
@@ -73,12 +73,12 @@ namespace ChestTotalPrice
                 {
                     if (chest.specialChestType.Get() == Chest.SpecialChestTypes.None)
                     {
-                        drawTotalValue(b, numDigits, temp, chestXpos, chestYpos, xOffset);
+                        drawTotalValue(chest, b, numDigits, temp, chestXpos, chestYpos, xOffset, 0, 0);
 
                     }
                     else if (chest.specialChestType.Get() == Chest.SpecialChestTypes.BigChest)
                     {
-                        drawTotalValue(b, numDigits, temp, chestXpos, chestYpos, xOffset);
+                        drawTotalValue(chest, b, numDigits, temp, chestXpos, chestYpos - 47, xOffset, -1, - 4);
                     }
                 }
 

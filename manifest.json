@@ -1,8 +1,8 @@
 {
   "Name": "ChestTotalPrice",
   "Author": "EliteWise",
-  "Version": "1.0.0",
-  "Description": "Display the total price of all items accumulated in a chest",
+  "Version": "1.1.0",
+  "Description": "Displays the total value of all items in a chest when opened",
   "UniqueID": "EliteWise.ChestTotalPrice",
   "EntryDll": "ChestTotalPrice.dll",
   "MinimumApiVersion": "4.0.0",
